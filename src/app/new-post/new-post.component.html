@@ -1,0 +1,30 @@
+<div id="main">
+    <div class="form-group">
+        <form [formGroup]="newPostForm">
+            <input id="title" formControlName="title" type="text" placeholder="Tựa đề hay gây ấn tượng cho người đọc" class="form-control">
+            <input id="tag" formControlName="tag" type="text" placeholder="Tag hợp lý giúp bài viết dễ tìm thấy hơn" class="form-control">
+
+            <span (click)="showModal()">Ngữ pháp Markdown</span>
+
+            <nz-modal [(nzVisible)]="isVisible" nzTitle="Ngữ pháp Markdown" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()">
+                <p>Content one</p>
+                <p>Content two</p>
+                <p>Content three</p>
+            </nz-modal>
+            <input id="editor" formControlName="content" type="text" class="form-control">
+
+            <p>Kéo thả / copy và paste ảnh vào editor hoặc chọn ảnh để upload</p>
+
+            <nz-upload nzType="drag" [nzMultiple]="true" [nzLimit]="" nzAction="https://jsonplaceholder.typicode.com/posts/" (nzChange)="handleChange($event)">
+                <p class="ant-upload-drag-icon">
+                    <i class="anticon anticon-inbox"></i>
+                </p>
+                <p class="ant-upload-text">Click or drag file to this area to upload</p>
+                <p class="ant-upload-hint">Support for a single or bulk upload. Strictly prohibit from uploading company data or other band files</p>
+            </nz-upload>   
+
+            <button id="save" class="btn btn-default">Lưu nháp</button>
+            <button class="btn btn-primary" (click)="post()">Đăng bài</button>
+        </form>
+    </div>
+</div>

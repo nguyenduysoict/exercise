@@ -1,0 +1,38 @@
+#main{
+    width: 90vw;
+    margin: 0 auto;
+}
+
+#title::placeholder{
+    font-size: 26px;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+#tag::placeholder{
+    color: rgba(0, 0, 0, 0.3);
+}
+
+input.form-control{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: transparent;
+}
+
+input.form-control:focus{
+    box-shadow: none;
+}
+
+#editor{
+    height: 40vw;
+    border: 0.5px solid rgba(0, 0, 0, 0.3);
+}
+
+:host ::ng-deep nz-upload { display: block; }
+:host ::ng-deep .ant-upload.ant-upload-drag { height: 180px; }
+
+nz-upload{
+    margin-bottom: 20px;
+}
+#save{
+    margin-right: 20px;
+}

@@ -1,0 +1,41 @@
+<div id="main">
+
+  <div id="quote">
+    <p>"<b>In theory, theory and practice are the same. In practice, they're not</b>" -- Yoggi Berra</p>
+  </div>
+
+  <div id="list">
+    <nz-list [nzDataSource]="data" [nzItemLayout]="'vertical'" [nzRenderItem]="item" [nzLoading]="loading" [nzLoadMore]="loadMore">
+      <ng-template #item let-item>
+        <nz-list-item [nzContent]="item.content" [nzActions]="[likeAction,shareAction]" [nzExtra]="extra">
+          <ng-template #likeAction>
+            <i class="anticon anticon-like-o" style="margin-right: 8px;"></i> {{item.likeC}}</ng-template>
+          <ng-template #shareAction>
+            <i class="anticon anticon-share-alt" style="margin-right: 8px;"></i> {{item.shareC}}</ng-template>
+          <nz-list-item-meta [nzTitle]="nzTitle" [nzDescription]="item.tag">
+            <ng-template #nzTitle>
+              <a id="title">{{item.title}}</a>
+            </ng-template>
+          </nz-list-item-meta>
+          <ng-template #extra>
+            <img width="272" alt="logo" [src]=item.imgPath>
+          </ng-template>
+        </nz-list-item>
+      </ng-template>
+      <ng-template #loadMore>
+          <div *ngIf="showLoadingMore" class="loadmore">
+            <button nz-button *ngIf="!loadingMore" (click)="onLoadMore()">loading more</button>
+            <nz-spin *ngIf="loadingMore" [nzSpinning]="loadingMore"></nz-spin>
+          </div>
+        </ng-template>
+    </nz-list>
+  </div>
+</div>
+
+<!-- <button id="xemthem" class="btn btn-default" (click)="seeMore()"> Xem thêm... </button> -->
+
+<nz-back-top [nzTemplate]="tpl" [nzVisibilityHeight]="100" (nzOnClick)="notify()">
+    <ng-template #tpl>
+      <div class="ant-back-top-inner">UP</div>
+    </ng-template>
+  </nz-back-top>

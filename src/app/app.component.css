@@ -1,0 +1,40 @@
+#header{
+    height: 60px;
+    background-color: #2C4762;
+}
+
+#main-content{
+    width: 70vw;
+    display: flex;
+    margin: 0 auto;
+    height: 100%;
+}
+
+
+#logo{
+    margin: auto 10px;
+}
+
+#search{
+    height: 30px;
+    width: 30vw;
+    border-radius: 15px;
+    margin: auto 10px;
+    background-color: #435F7A;
+    border: transparent;
+}
+
+
+
+#search:focus{
+    background: white;
+}
+
+#loginArea{
+    margin: auto 0;
+}
+
+a{
+    margin: auto 10px;
+    color: white; 
+}

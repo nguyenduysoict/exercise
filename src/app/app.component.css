@@ -1,5 +1,5 @@
 #header{
-    height: 60px;
+    height: 10vh;
     background-color: #2C4762;
 }
 
@@ -8,33 +8,100 @@
     display: flex;
     margin: 0 auto;
     height: 100%;
+    color: white;
 }
 
 
 #logo{
     margin: auto 10px;
+    padding-right: 20px;
+    color: white;
+    font-size: 22px;
+    font-family: 'Lato', sans-serif;
+    border-right: 0.5px solid #435F7A;
 }
 
-#search{
+#search-form{
     height: 30px;
-    width: 30vw;
+    width: 20vw;
     border-radius: 15px;
-    margin: auto 10px;
+    margin-top: 25px;
     background-color: #435F7A;
     border: transparent;
 }
 
+#right-menu{
+    display: flex;
+    padding-left: 15vw;
+    height: 100%;
+}
 
-
-#search:focus{
+#search-form:focus{
     background: white;
+}
+
+#log{
+    margin: auto 0;
+}
+
+.notibutt{
+    background-color: #2C4762;
+    border: none;
+}
+
+#log i{
+    color: white;
+}
+
+.fa-bell:hover{
+    color: #435F7A;
+}
+
+#log img{
+    margin-left: 10px;
+    height: 50px;
+    width: 50px;
 }
 
 #loginArea{
     margin: auto 0;
+    font-size: 13px;
+    padding-left: 15px;
+}
+
+#login{
+    color: #87CEFA;
+}
+
+#login:hover{
+    color: #F5F5F5;
+}
+
+#signup{
+    color: 	#87CEFA;
+}
+
+#signup:hover{
+    color: #F5F5F5;
 }
 
 a{
-    margin: auto 10px;
-    color: white; 
+    color: white;
+    font-family: 'Lato', sans-serif;
+}
+
+.atag{
+    color: white;
+    margin: auto 0;
+    padding: 7px 10px;
+    border-right: 0.5px solid #435F7A;
+}
+
+.atag:hover{
+    background-color: #435F7A;
+}
+
+.notiImg{
+    width: 97px;
+    height: 55px;
 }

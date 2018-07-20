@@ -1,0 +1,30 @@
+<div id="main">
+    <div>
+      <h3>Search results:</h3>
+    </div>
+    <div *ngIf="NotFound; else Found">
+        <h2>Post not found!</h2>
+      </div>
+      <ng-template #Found>
+        <div id="list">
+          <nz-list [nzDataSource]="posts" [nzItemLayout]="'vertical'" [nzRenderItem]="item">
+            <ng-template #item let-item>
+              <nz-list-item [nzContent]="item.content" [nzActions]="[likeAction,shareAction]" [nzExtra]="extra">
+                <ng-template #likeAction>
+                  <i (click)="increaseLike(item.id)" class="anticon anticon-like-o" style="margin-right: 8px;"></i> {{item.likeCount}}</ng-template>
+                <ng-template #shareAction>
+                  <i (click)="increaseShare(item.id)" class="anticon anticon-share-alt" style="margin-right: 8px;"></i> {{item.shareCount}}</ng-template>
+                <nz-list-item-meta [nzTitle]="nzTitle" [nzDescription]="item.tag">
+                  <ng-template #nzTitle>
+                    <a (click)="onPostDetail(item.title, item)" id="title">{{item.title}}</a>
+                  </ng-template>
+                </nz-list-item-meta>
+                <ng-template #extra>
+                  <img width="272" alt="logo" [src]=item.imgPath>
+                </ng-template>
+              </nz-list-item>
+            </ng-template>
+          </nz-list>
+        </div>
+      </ng-template>
+</div>

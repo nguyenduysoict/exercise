@@ -1,0 +1,17 @@
+#main, h2{
+    width: 70vw;
+    margin: 0 auto;
+}
+#title{
+    color: #00918B;
+    font-size: 25px;
+}
+
+#xemthem{
+    margin-left: 35vw;
+}
+
+h3{
+    color: chocolate;
+    margin: 30px;
+}

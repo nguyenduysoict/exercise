@@ -22,7 +22,13 @@ input.form-control:focus{
     box-shadow: none;
 }
 
-#editor{
+#img {
+    border: 1px solid black;
+}
+
+.editor{
+    margin-top: 20px;
+    margin-bottom: 20px;
     height: 40vw;
     border: 0.5px solid rgba(0, 0, 0, 0.3);
 }
@@ -35,4 +41,8 @@ nz-upload{
 }
 #save{
     margin-right: 20px;
+}
+
+button{
+    margin-bottom: 20px;
 }

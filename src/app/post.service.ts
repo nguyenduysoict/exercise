@@ -3,6 +3,7 @@ import { Post } from './post';
 export class PostService {
     private posts: Post[] = [
         new Post (
+            'P001',
             'Love it, Change it or Leave it',
             '#love, #change',
             // tslint:disable-next-line:max-line-length
@@ -12,6 +13,7 @@ export class PostService {
             0,
         ),
         new Post (
+            'P002',
             'Pass by reference and pass by value',
             '#reference, #value',
             // tslint:disable-next-line:max-line-length

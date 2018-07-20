@@ -5,13 +5,13 @@
   </div>
 
   <div id="list">
-    <nz-list [nzDataSource]="data" [nzItemLayout]="'vertical'" [nzRenderItem]="item" [nzLoading]="loading" [nzLoadMore]="loadMore">
+    <nz-list [nzDataSource]="post" [nzItemLayout]="'vertical'" [nzRenderItem]="item" [nzLoading]="loading" [nzLoadMore]="loadMore">
       <ng-template #item let-item>
         <nz-list-item [nzContent]="item.content" [nzActions]="[likeAction,shareAction]" [nzExtra]="extra">
           <ng-template #likeAction>
-            <i class="anticon anticon-like-o" style="margin-right: 8px;"></i> {{item.likeC}}</ng-template>
+            <i class="anticon anticon-like-o" style="margin-right: 8px;"></i> {{item.likeCount}}</ng-template>
           <ng-template #shareAction>
-            <i class="anticon anticon-share-alt" style="margin-right: 8px;"></i> {{item.shareC}}</ng-template>
+            <i class="anticon anticon-share-alt" style="margin-right: 8px;"></i> {{item.shareCount}}</ng-template>
           <nz-list-item-meta [nzTitle]="nzTitle" [nzDescription]="item.tag">
             <ng-template #nzTitle>
               <a id="title">{{item.title}}</a>

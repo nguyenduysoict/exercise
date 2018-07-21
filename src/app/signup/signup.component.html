@@ -1,3 +1,15 @@
-<p>
-  signup works!
-</p>
+<div id="signUp">
+
+  <div id="notice">
+    Signup new account!
+  </div>
+  <form class="form-group" [formGroup]="signUpForm">
+    <div class="form-group">
+      <input class="form-control" type="text" formControlName="username" placeholder="Username">
+    </div>
+    <div class="form-group">
+      <input class="form-control" type="password" formControlName="password" placeholder="Password">
+    </div>
+    <button class="btn btn-success" (click)="signUp()"> Đăng ký </button>
+  </form>
+</div>

@@ -1,0 +1,13 @@
+#logIn{
+    width: 30vw;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#inForm{
+    height: 30px;
+    background-color: lightskyblue;
+    color: black;
+    font-size: 15px;
+    margin-bottom: 20px;
+}

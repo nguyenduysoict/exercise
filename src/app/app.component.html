@@ -4,32 +4,69 @@
       <a routerLink="posts">Kipalog
       </a>
     </div>
-    <input type="text" class="form-control" placeholder="Tìm kiếm" id="search">
-    <a routerLink="posts/new">
-      <div class='atag'>
+
+    <form [formGroup]="searchForm">
+        <input formControlName="textSearch" (keyup.enter)="searchHandler()" type="text"
+        id="search-form" nz-input placeholder="input search title">
+    </form>
+
+    <div id="right-menu">
+      <a class='atag' (click)="newPost()">
         <i class="fa fa-edit"></i>
         Viết bài
-      </div>
-    </a>
-    <a routerLink="">
-      <div class='atag'>
+      </a>
+      <nz-modal [(nzVisible)]="isVisible" nzTitle="Login first!" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()" [nzOkLoading]="isOkLoading">
+          <p>Nhấn OK để chuyển đến trang đăng nhập</p>
+      </nz-modal>
+      <a class='atag' routerLink="">
         <i class="fa fa-home"></i>
         Trang chủ
-      </div>
-    </a>
+      </a>
 
-    <a routerLink="posts/store">
-      <div class='atag'>
-          <i class="fa fa-bookmark"></i>
+      <a class='atag' (click)="postStore()">
+        <i class="fa fa-bookmark"></i>
         Kho log
-      </div>
-    </a>
+      </a>
 
-    <div id="loginArea" *ngIf="!logIn; else loggedIn" class='atag'>
-      <a routerLink="login">Login</a>
-      <a routerLink="signup">Signup</a>
+      <div id="loginArea" *ngIf="!logIn; else logOut">
+        <a id="login" routerLink="login">Login&nbsp;&nbsp;</a>
+        <span>/</span>
+
+        <a id="signup" routerLink="signup">&nbsp;&nbsp;Sign up</a>
+      </div>
     </div>
-    <ng-template #loggedIn> Logged in </ng-template>
+
+    <ng-template #logOut>
+      <div id="log">
+        <button class="notibutt" (nzVisibleChange)="change($event)"
+        nzTrigger="click" nz-button nz-popover nzTitle="Thông báo" [nzContent]="contentTemplate" nzPlacement="bottomRight">
+          <i class="fa fa-bell"></i>
+        </button>
+        <ng-template #contentTemplate>
+            <div>
+              <div>
+                <img class="notiImg" src="https://www.cedarcityutah.com/wp-content/uploads/2016/02/kid-programmer-high-techFI-JLA-970x546.jpg">
+                <span> &nbsp; <b>Cấm Huỳnh</b> đã viết bài viết mới <b>IO data và vectored I/O</b> </span>
+              </div>
+              <hr>
+              <div>
+                <img class="notiImg" src="https://www.cedarcityutah.com/wp-content/uploads/2016/02/kid-programmer-high-techFI-JLA-970x546.jpg">
+                <span> &nbsp; <b>Huy Trần</b> đã viết bài viết mới <b>IO data và vectored I/O</b> </span>
+              </div>
+              <hr>
+              <div>
+                <img  class="notiImg" src="https://www.cedarcityutah.com/wp-content/uploads/2016/02/kid-programmer-high-techFI-JLA-970x546.jpg">
+                <span> &nbsp; <b>Huy Hoàng</b> đã viết bài viết mới <b>IO data và vectored I/O</b> </span>
+              </div>
+            </div>
+          </ng-template>
+        <img src="https://www.atomix.com.au/media/2015/06/atomix_user31.png" nz-popover nzTitle="Trang cá nhân" [nzContent]="popUptest">
+      </div> </ng-template>
+      <ng-template #popUptest>
+          <div>
+            <a (click)="Logout()">Sign out</a>
+          </div>
+        </ng-template>
   </div>
 </div>
 

@@ -1,0 +1,32 @@
+<div class="post-detail">
+  <div class="top-content">
+    <div class="head">
+      <div class="title">
+        {{postDetail.title}}
+      </div>
+      <div>
+        <span>Tag:</span>
+        {{postDetail.tag}}
+      </div>
+    </div>
+
+    <div *ngIf="logIn" class="kipalogArea">
+      <div *ngIf="logged; else log">
+        <button id="logged" (click)="unKipalog()" class="btn"> <i class="fa fa-check"></i>Đã kipalog</button>
+      </div>
+    </div>
+  </div>
+  <ng-template #log>
+    <button id="kipalog" (click)="kipalog()" class="btn"> <i class="fa fa-bookmark"></i> Kipalog</button>
+  </ng-template>
+
+
+  <hr>
+  <div>
+    <img [src]="postDetail.imgPath" alt="">
+  </div>
+  <hr>
+  <div>
+    <p> &emsp;&emsp;&emsp;&emsp; {{postDetail.mainContent}} </p>
+  </div>
+</div>

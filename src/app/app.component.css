@@ -105,3 +105,15 @@ a{
     width: 97px;
     height: 55px;
 }
+
+#logout{
+    margin-bottom: 5px;
+}
+
+#logout:hover{
+    color: #2C4762;
+}
+
+#uploadpost:hover{
+    color: #2C4762;
+}

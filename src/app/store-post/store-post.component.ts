@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Post } from '../post';
 import { PostService } from '../post.service';
 import { Router } from '@angular/router';
+import { AccountService } from '../account.service';
 
 @Component({
   selector: 'app-store-post',
@@ -14,22 +15,17 @@ export class StorePostComponent implements OnInit {
   len: number;
   posts: Post[];
   title: string;
-  constructor( private router: Router, private postService: PostService) { }
+  NotFound: boolean;
+  constructor( private accountService: AccountService, private router: Router, private postService: PostService) { }
 
   ngOnInit() {
-    this.posts = this.postService.getPosts();
+    this.posts = this.accountService.getLogPost();
     this.len = this.posts.length;
-    this.data = new Array(this.len)
-      .fill({this: this.posts}).map((i, index) => {
-      return {
-        likeC: this.posts[index].likeCount,
-        shareC: this.posts[index].shareCount,
-        title: this.posts[index].title,
-        imgPath: this.posts[index].imgPath,
-        tag: this.posts[index].tag,
-        content: this.posts[index].content
-      };
-    });
+    if (this.len === 0) {
+      this.NotFound = true;
+    } else {
+      this.NotFound = false;
+    }
 
   }
   onPostDetail(str, item) {

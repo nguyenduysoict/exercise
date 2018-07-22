@@ -3,7 +3,11 @@
     margin: 0 auto;
     text-align: center;
 }
-
+#title{ 
+    font-size: 25px;
+    color: #00918B;
+    margin: 20px;
+}
 #inForm{
     height: 30px;
     background-color: lightskyblue;

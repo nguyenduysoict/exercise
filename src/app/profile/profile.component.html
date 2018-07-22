@@ -1,5 +1,12 @@
-<div *ngIf="NotFound; else Found">
-    <h2>Bạn chưa log post nào cả!</h2>
+<div class="profile">
+
+  <div class= "wel">
+    Chào
+    <span style="color: #00918B; font-size: 20px">{{author}}</span>, dưới đây là những post bạn đã đăng:
+  </div>
+
+  <div *ngIf="NotFound; else Found">
+    <h2>Bạn chưa đăng Post nào cả!</h2>
   </div>
   <ng-template #Found>
     <div id="list">
@@ -23,3 +30,6 @@
       </nz-list>
     </div>
   </ng-template>
+
+
+</div>

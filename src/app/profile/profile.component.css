@@ -1,0 +1,12 @@
+.profile{
+    width: 60vw;
+    margin: 0 auto;
+    font-family: 'Open Sans', sans-serif;
+    padding: 0 30px;
+    border-left: 0.3px solid #00918B;
+    border-right: 0.3px solid #00918B;
+}
+
+.wel{
+    margin: 30px;
+}

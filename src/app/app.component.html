@@ -60,11 +60,14 @@
               </div>
             </div>
           </ng-template>
-        <img src="https://www.atomix.com.au/media/2015/06/atomix_user31.png" nz-popover nzTitle="Trang cá nhân" [nzContent]="popUptest">
+        <img [src]="profilePicture" nz-popover nzTitle="Cá nhân" [nzContent]="popUptest">
       </div> </ng-template>
       <ng-template #popUptest>
           <div>
-            <a (click)="Logout()">Sign out</a>
+            <a id="logout" (click)="Logout()">Sign out</a>
+          </div>
+          <div>
+            <a id="uploadpost"(click)="uploadPost()">Bài đã đăng</a>
           </div>
         </ng-template>
   </div>

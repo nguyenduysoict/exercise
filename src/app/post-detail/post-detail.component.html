@@ -5,11 +5,12 @@
         {{postDetail.title}}
       </div>
       <div>
-        <span>Tag:</span>
+        <span style="color: #5F9EA0; font-weight: 200">Tag:</span>
         {{postDetail.tag}}
+        <span style="color: #5F9EA0; font-weight: 200">Author:</span>
+        {{author}}
       </div>
-    </div>
-
+    </div>  
     <div *ngIf="logIn" class="kipalogArea">
       <div *ngIf="logged; else log">
         <button id="logged" (click)="unKipalog()" class="btn"> <i class="fa fa-check"></i>Đã kipalog</button>

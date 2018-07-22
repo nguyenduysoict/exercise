@@ -7,6 +7,7 @@ import { SignupComponent } from './signup/signup.component';
 import { PostDetailComponent } from './post-detail/post-detail.component';
 import { NewPostComponent } from './new-post/new-post.component';
 import { PostSearchResultComponent } from './post-search-result/post-search-result.component';
+import { ProfileComponent } from './profile/profile.component';
 
 const AppRoutes: Routes = [
     { path: '', redirectTo: 'posts', pathMatch: 'full' },
@@ -16,7 +17,8 @@ const AppRoutes: Routes = [
     { path: 'posts/search', component: PostSearchResultComponent },
     { path: 'posts/:title', component: PostDetailComponent },
     { path: 'login', component: LoginComponent },
-    { path: 'signup', component: SignupComponent }
+    { path: 'signup', component: SignupComponent },
+    { path: 'profile', component: ProfileComponent}
 ];
 
 @NgModule({

@@ -20,6 +20,7 @@ import { HttpClientModule } from '../../node_modules/@angular/common/http';
 import { NewPostComponent } from './new-post/new-post.component';
 import { StorePostComponent } from './store-post/store-post.component';
 import { PostSearchResultComponent } from './post-search-result/post-search-result.component';
+import { ProfileComponent } from './profile/profile.component';
 
 
 
@@ -33,7 +34,8 @@ import { PostSearchResultComponent } from './post-search-result/post-search-resu
     SignupComponent,
     PostsComponent,
     PostDetailComponent,
-    PostSearchResultComponent
+    PostSearchResultComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

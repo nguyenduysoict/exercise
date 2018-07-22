@@ -12,6 +12,7 @@ import { Post } from './post';
 })
 
 export class AppComponent {
+
   title = 'app';
   loggedIn: false;
   searchForm: FormGroup;
@@ -19,7 +20,7 @@ export class AppComponent {
   isVisible = false;
   isOkLoading = false;
   searchKey: string;
-  constructor(private postService: PostService, private formBuilder: FormBuilder,
+  constructor(private formBuilder: FormBuilder,
      private accountService: AccountService, private router: Router) {
        this.searchForm = this.formBuilder.group({
          textSearch: ['', Validators]
@@ -33,6 +34,9 @@ export class AppComponent {
     }
   }
 
+  get profilePicture() {
+     return this.accountService.getAccountPicture();
+  }
   postStore = () => {
     if (this.logIn) {
       this.router.navigate(['posts/store']);
@@ -68,8 +72,12 @@ export class AppComponent {
     console.log(value);
   }
 
-  Logout() {
+  Logout = () => {
     this.accountService.loggedIn = false;
-    this.router.navigate(['posts/login']);
+    this.router.navigate(['login']);
+  }
+
+  uploadPost = () => {
+    this.router.navigate(['profile']);
   }
 }

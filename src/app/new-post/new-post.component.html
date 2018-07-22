@@ -5,13 +5,16 @@
             <input id="tag" formControlName="tag" type="text" placeholder="Tag hợp lý giúp bài viết dễ tìm thấy hơn" class="form-control">
 
             <span (click)="showModal()">Ngữ pháp Markdown</span>
+            <br>
 
             <nz-modal [(nzVisible)]="isVisible" nzTitle="Ngữ pháp Markdown" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()">
                 <p>Content one</p>
                 <p>Content two</p>
                 <p>Content three</p>
             </nz-modal>
-            <textarea class="editor" formControlName="content" class="form-control" rows="10vw" cols="30vw"></textarea>
+            <label> Description:  </label>
+            <textarea class="editor" formControlName="content" class="form-control" rows="5vw" cols="20vw"></textarea>
+            <label> Content: </label>
             <textarea class="editor" formControlName="mainContent" class="form-control" rows="20vw" cols="50vw"></textarea>
 
             <p>Kéo thả / copy và paste ảnh vào editor hoặc chọn ảnh để upload</p>

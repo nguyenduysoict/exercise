@@ -10,18 +10,20 @@ import { Post } from '../post';
 })
 export class PostDetailComponent implements OnInit {
 
-  loggIn: boolean;
   constructor(private accountService: AccountService, private postService: PostService) { }
 
   postDetail: Post;
   logged: boolean;
+  author: string;
   ngOnInit() {
     this.postDetail = this.postService.getPostDetail();
     if (this.accountService.loggedIn) {
-      this.accountService.findLogPost(this.postDetail);
+      this.accountService.checkLogPost(this.postDetail);
+      this.logged = this.accountService.loggedPost;
+      this.author = this.accountService.getAccountId();
     }
-    this.logged = this.accountService.loggedPost;
   }
+
 
   get logIn() {
     return this.accountService.loggedIn;
